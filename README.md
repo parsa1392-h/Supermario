@@ -34,3 +34,5 @@ python main.py
 
 ## 📄 License
 ...
+## 📊 Status 
+This project is incomplete.
