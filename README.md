@@ -26,11 +26,11 @@ python main.py
 ```
 
 ## 📷 Screenshots
-(Add your screenshots here)
+...
 
 ## 🛠️ Built With
 - Python
 - Pygame
 
 ## 📄 License
-This project is for educational purposes only and is not affiliated with Nintendo.
+...
