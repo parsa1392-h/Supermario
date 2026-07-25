@@ -1,4 +1,4 @@
-# 🍄 Super Mario Clone
+# 🍄 Super Mario 
 
 A classic 2D platformer inspired by Super Mario Bros, built with Python and Pygame.
 
