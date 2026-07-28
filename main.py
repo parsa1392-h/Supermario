@@ -18,8 +18,8 @@ def correct_location(actor):
         actor.y = WIDTH + actor.width//2
 
 def random_location(actor):
-    actor.x = random.randit(0, 1280)
-    actor.y = random.randit(0, 720)
+    actor.x = random.randint(0, 1280)
+    actor.y = random.randint(0, 720)
 
 def draw():
     mod.screen.blit("back", (0, 0))
@@ -41,7 +41,6 @@ def update():
         mario.x += 5
         mario.image = "mario_right"
     correct_location(mario)
-
     #luigi sections
     if keyboard.w:
         luigi.y -= 5
