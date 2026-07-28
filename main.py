@@ -6,6 +6,21 @@ from ctypes import windll
 from pgzero.actor import Actor
 from pgzero.keyboard import keyboard
 
+
+def correct_location(actor):
+    if actor.x > WIDTH + actor.width//2:
+        actor.x = -actor.width//2
+    if actor.x < -actor.width//2:
+        actor.x = WIDTH + actor.width//2
+    if actor.y > WIDTH + actor.width//2:
+        actor.y = -actor.width//2
+    if actor.y < -actor.width//2:
+        actor.y = WIDTH + actor.width//2
+
+def random_location(actor):
+    actor.x = random.randit(0, 1280)
+    actor.y = random.randit(0, 720)
+
 def draw():
     mod.screen.blit("back", (0, 0))
     mario.draw()
@@ -25,6 +40,8 @@ def update():
     if keyboard.right:
         mario.x += 5
         mario.image = "mario_right"
+    correct_location(mario)
+
     #luigi sections
     if keyboard.w:
         luigi.y -= 5
@@ -36,7 +53,7 @@ def update():
     if keyboard.d:
         luigi.x += 5
         luigi.image = "luigi_right"
-
+    correct_location(luigi)
 
 WIDTH = 1280
 HEIGHT = 720
@@ -46,20 +63,16 @@ windll.user32.MoveWindow(hwnd, 130, 30, WIDTH, HEIGHT, False)
 mod = sys.modules['__main__']
 
 mario = Actor("mario_right")
-mario.x = random.randint(0, 1280)
-mario.y = random.randint(0, 720)
+random_location(mario)
 
 luigi = Actor("luigi_right")
-luigi.x = random.randint(0, 1280)
-luigi.y = random.randint(0, 720)
+random_location(luigi)
 
 coin = Actor("coin")
-coin.x = random.randint(0, 1280)
-coin.y = random.randint(0, 720)
+random_location(coin)
 
 enemy = Actor("enemy_right")
-enemy.x = random.randint(0, 1280)
-enemy.y = random.randint(0, 720)
+random_location(enemy)
 
 pgzrun.go()
  
